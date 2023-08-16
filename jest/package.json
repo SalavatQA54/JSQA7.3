@@ -6,7 +6,7 @@
     "scripts": {
       "test": "jest",
       "test:watch": "jest --watchAll",
-      "coverage": "jest --collectCoverage"
+      "test:coverage": "jest --collectCoverage"
     },
     "keywords": [
       "jest",
@@ -17,5 +17,20 @@
     "license": "ISC",
     "devDependencies": {
       "jest": "^29.5.0"
-    }
+    },
+    "jest": {
+      "collectCoverageFrom": [
+        "**/*.{js,jsx}",
+        "!**/node_modules/**",
+        "!**/coverage/**",
+        "!**/.vscode/**"
+      ],
+      "coverageThreshold": {
+        "global": {
+          "branches": 100,
+          "functions": 100,
+          "lines": 100
+        }
+      }
+    } 
   }
